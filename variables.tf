@@ -58,6 +58,13 @@ variable "security_groups" {
   description = "List of security groups to be allowed to connect to the DB instance"
 }
 
+variable "security_groups_to_attach" {
+  type        = ist(string)
+  default     = []
+  description = "List of security groups to attach directly to the DB instance"
+}
+
+
 variable "vpc_id" {
   type        = string
   description = "VPC ID to create the cluster in (e.g. `vpc-a22222ee`)"
