@@ -59,7 +59,7 @@ variable "security_groups" {
 }
 
 variable "security_groups_to_attach" {
-  type        = ist(string)
+  type        = list(string)
   default     = []
   description = "List of security groups to attach directly to the DB instance"
 }
