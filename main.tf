@@ -67,6 +67,7 @@ resource "aws_rds_cluster" "default" {
   global_cluster_identifier           = var.global_cluster_identifier
   iam_roles                           = var.iam_roles
   backtrack_window                    = var.backtrack_window
+  auto_minor_version_upgrade          = false
 
   dynamic "scaling_configuration" {
     for_each = var.scaling_configuration
