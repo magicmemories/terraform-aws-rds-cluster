@@ -67,7 +67,6 @@ resource "aws_rds_cluster" "default" {
   global_cluster_identifier           = var.global_cluster_identifier
   iam_roles                           = var.iam_roles
   backtrack_window                    = var.backtrack_window
-  auto_minor_version_upgrade          = false
 
   dynamic "scaling_configuration" {
     for_each = var.scaling_configuration
@@ -105,6 +104,7 @@ resource "aws_rds_cluster_instance" "default" {
   performance_insights_enabled    = var.performance_insights_enabled
   performance_insights_kms_key_id = var.performance_insights_kms_key_id
   availability_zone               = var.instance_availability_zone
+  auto_minor_version_upgrade      = false
 }
 
 resource "aws_db_subnet_group" "default" {
